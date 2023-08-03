@@ -40,7 +40,7 @@
 // Si el valor no esta dentro del array lo agregue
 // RETORNE ARRAY console.log(arrayDeResultado)
 
-let valores = [2, 6, '9', 0, 8]
+// let valores = [2, 6, '9', 0, 8]
 
 // const miFuncion = (valor, array) => {
     //     // Codigo
@@ -51,19 +51,19 @@ let valores = [2, 6, '9', 0, 8]
     
     
 
-const miFuncionResuelta = (valor, array) => {
-    const encontrado = array.find(numero => numero === valor)
+// const miFuncionResuelta = (valor, array) => {
+//     const encontrado = array.find(numero => numero === valor)
 
-    if(encontrado){
-        const newArray = array.filter(numero => numero !== valor)
-        return console.log(newArray)
-    }else{
-        const newArray = [...array, valor]
-        return console.log(newArray)
-    } 
-}
+//     if(encontrado){
+//         const newArray = array.filter(numero => numero !== valor)
+//         return console.log(newArray)
+//     }else{
+//         const newArray = [...array, valor]
+//         return console.log(newArray)
+//     } 
+// }
 
-miFuncionResuelta(9, valores)
+// miFuncionResuelta(9, valores)
 
 
 
@@ -231,3 +231,5 @@ i-- // Esto resta 1
 // En resumen, Webpack es una poderosa herramienta que facilita la construcción y optimización de aplicaciones web al permitir la gestión de dependencias, la transpilación, la creación de bundles y la automatización de tareas, lo que contribuye a mejorar la eficiencia y el rendimiento de los proyectos web.
 
 // Para profundizar WEBPACK: https://www.youtube.com/watch?v=FMNuTj89RzU&ab_channel=midudev
+
+
