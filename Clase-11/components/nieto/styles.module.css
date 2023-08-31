@@ -1,0 +1,15 @@
+.card{
+    width: 200px;
+    height: 120px;
+    background-color: rgb(60, 71, 71);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+    flex-wrap: wrap;
+}
