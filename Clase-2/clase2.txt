@@ -1,0 +1,21 @@
+DOM y Virtual DOM
+
+Inicialización: Cuando una aplicación React se inicia, se crea un Virtual DOM que replica el DOM real del navegador.
+
+Actualización: Cuando se produce un cambio en el estado o en los datos de la aplicación, se genera un nuevo Virtual DOM para representar esa nueva versión del interfaz.
+
+Diferenciación: React compara este nuevo Virtual DOM con el anterior para identificar cuál es la diferencia entre los dos. Este proceso se llama "Reconciliación".
+
+Actualización del DOM real: Solo las partes que han cambiado en el Virtual DOM se actualizan en el DOM real, en lugar de volver a renderizar todo el DOM. Este enfoque optimiza el rendimiento y mejora la eficiencia en términos de recursos computacionales.
+
+Ventajas del Virtual DOM
+Optimización del rendimiento: Al no tener que manipular todo el DOM real para cada cambio, se mejora significativamente el rendimiento.
+
+Desarrollo más sencillo: Los desarrolladores no tienen que preocuparse tanto por cómo y cuándo se actualiza el DOM, ya que React maneja esto de forma eficiente.
+
+Mayor consistencia: Dado que React se encarga de administrar el Virtual DOM y el DOM real, las posibilidades de errores o comportamientos inconsistentes se reducen.
+
+Ejemplo sencillo
+Imaginense que tienen una lista de elementos y solo quieren actualizar uno de ellos. En una implementación tradicional del DOM, quizás tendrían que volver a renderizar toda la lista para reflejar este cambio. Sin embargo, con el Virtual DOM, solo se actualizaría el elemento específico que cambió, dejando el resto de la lista intacta. Esto es mucho más eficiente.
+
+En resumen, el Virtual DOM es una capa de abstracción que permite a React optimizar el rendimiento de la aplicación al minimizar las costosas operaciones de manipulación del DOM real.

@@ -48,13 +48,18 @@
 
 // Expresiones // -------------------------------------------------
 
-console.log(2 + 2) 
-console.log(2 + '2') 
-console.log('Hola, ' + 'Coders')
+// console.log(2 + 2) = 4
+// console.log(2 + '2') 
+// console.log('Hola, ' - 'Coders')
 // console.log(4 - '2')
 
 // La programacion imperativa puede existir por si sola, pero la declarativa necesita de la imperativa
 
 // Creacion de componente: // ---------------------------------------
 
+const obj = {
+    nombre: "lucho",
+    edad: "26"
+}
 
+console.log(obj.nombre)
