@@ -1,7 +1,10 @@
 // // Propiedades dinamicas:
-// const año = 19887;
-// const objeto = { nombre: "luciano", [ "propDinamica" + año ]: "coders" };
-// console.log(objeto); 
+// const contador = 1;
+// const objeto = {
+//     nombre: "luciano",
+//     [ "propDinamica" + contador ]: "coders" 
+// };
+// console.log(objeto);
 
 // // Salida: 
 // // { 
@@ -10,14 +13,14 @@
 // // }
 
 
-
-
-
 // Spread operator:
-// const alumnosArray = ['Juan', 'Marce', 'Luis', 'Mica', 'Luz']
-// const alumnosNuevosArray = ['Manu', 'Azul', 'Chiara']
+const alumnosArray = ['Juan', 'Marce', 'Luis', 'Mica', 'Luz']
+
+const alumnosNuevosArray = ['Manu', 'Azul', 'Chiara']
+
 // const alumnosTotal = [...alumnosArray, ...alumnosNuevosArray]
 // console.log(alumnosTotal)
+
 // ...alumnosArray = 'Juan', 'Marce', 'Luis', 'Mica', 'Luz'
 // ...alumnosNuevosArray = 'Manu', 'Azul', 'Chiara'
 
@@ -27,8 +30,11 @@
 
 
 // const arrayEjemplo = [1, 2, 3, 4]
+
 // const nuevoValor = 10
-// const nuevoArray = [...arrayEjemplo, nuevoValor, 22, 'hola']
+
+// const nuevoArray = [...arrayEjemplo, nuevoValor, 22, 'Hola']
+
 // console.log(nuevoArray)
 // const nuevo = [...arrayEjemplo]
 
@@ -40,13 +46,31 @@
 // Si el valor no esta dentro del array lo agregue
 // RETORNE ARRAY console.log(arrayDeResultado)
 
-// let valores = [2, 6, '9', 0, 8]
+let valores = [2, 6, 9, 0, '8']
 
-// const miFuncion = (valor, array) => {
-    //     // Codigo
-    // }
+// 0 == '0' : true
+// 0 === '0' : false
+
+// 0 !== '0' : true
+// 0 != '0' : false
+const miFuncion = (valor, array) => {
+    const isIn = array.find(n => n === valor)
+    let arrayNuevo = []
+    if(isIn){
+        arrayNuevo = array.filter(n => n !== valor)
+    }else{
+        arrayNuevo = [...array, valor]
+    }
+    return arrayNuevo
+}
+
+// console.log(miFuncion(8, valores))
+
+// true ? console.log('es true') : console.log('es false')
+const miValorNuevo = 10
+miValorNuevo == 10 && console.log('es true')
     
-    // Ayudas: podemos utilizar un .find() para ver si el valor se encuentra dentro del array
+// Ayudas: podemos utilizar un .find() para ver si el valor se encuentra dentro del array
     
     
     
@@ -78,7 +102,7 @@
 
 // Desestructuracion de array u objetos
 const objetoDesestructuracion = {
-    comision: '55735',
+    comision: '9999',
     alumnos: 103,
     clases: 15,
     tema: 'ReactJs'
@@ -114,21 +138,32 @@ const objetoDesestructuracion = {
 
 
 
-// // Operador ternario y "template literals" o "template strings"
-// const miValor = 102
+// Operador ternario y "template literals" o "template strings"
+// const miValor = 20
 // if(miValor > 50){
 //     console.log('mi valor es mayor a 50 y es de: ' + miValor)
 // }else{
 //     console.log('mi valor es menor o igual a 50 y es de: ' + miValor)
 // }
 
-// // Veamoslo con operador ternario y template strings:
+// Veamoslo con operador ternario y template strings:
 // const miValor = 49
-// console.log(
-//     miValor > 50 ? 
-//     `mi valor es mayor a 50 y es de: ${miValor}` : 
-//     `mi valor es menor o igual a 50 y es de: ${miValor}`
-// )
+// console.log(miValor > 50 ? `mi valor es mayor a 50 y es de: ${miValor}` : `mi valor es menor o igual a 50 y es de: ${miValor}`)
+
+// "mi valor es mayor a 50 y es de: " + miValor
+// `mi valor es mayor a 50 y es de: ${miValor}` 
+
+// const estaBuenaClase = false
+// const esTrue = true
+
+// if(esTrue || (estaBuenaClase && miValor > 0)){
+//     // entra aca
+// }else{
+//     // entra al else
+// }
+
+
+// estaBuenaClase ? console.log('Si') : console.log('No')
 
 // const miCondicion = true
 // console.log(miCondicion ? 'es true' : 'es false')
@@ -176,22 +211,22 @@ const miCarrito = []
 
 
 
-// Ejemplos comunes de Sugar Syntax:
-// Sin sugar syntax:
-let i = 0
-i = i + 1
-i = i - 1
-i = i * 4
-i = i / 2
-// Con sugar syntax
-i += 1; // Equivalente a i = i + 1; (Suma)
-i -= 1; // Equivalente a i = i - 1; (Resta)
-i *= 1; // Equivalente a i = i * 1; (Multiplicación)
-i /= 1; // Equivalente a i = i / 1; (División)
+// // Ejemplos comunes de Sugar Syntax:
+// // Sin sugar syntax:
+// let i = 0
+// i = i + 1
+// i = i - 1
+// i = i * 4
+// i = i / 2
+// // Con sugar syntax
+// i += 1; // Equivalente a i = i + 1; (Suma)
+// i -= 1; // Equivalente a i = i - 1; (Resta)
+// i *= 1; // Equivalente a i = i * 1; (Multiplicación)
+// i /= 1; // Equivalente a i = i / 1; (División)
 
-// Otros ejemplos:
-i++ // Esto suma 1
-i-- // Esto resta 1
+// // Otros ejemplos:
+// i++ // Esto suma 1
+// i-- // Esto resta 1
 
 
 
