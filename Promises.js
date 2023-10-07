@@ -3,44 +3,69 @@
 // const myPromise = new Promise((resolve, reject) => {
 //     // Simulamos una operación asincrónica
 //     setTimeout(() => {
-//       const randomNumber = 1000
-//       if (randomNumber > 0.5) {
-//         resolve(randomNumber); // Si el número es mayor que 0.5, resolvemos la Promise con el número
-//       } else {
-//         reject('REJECT: El número es menor o igual a 0.5'); // Si el número es menor o igual a 0.5, rechazamos la Promise con un mensaje de error
-//       }
+//       reject('REJECT: Operacion rechazada');
+//       resolve('RESOLVE: Me resolvi con exito'); 
 //     }, 2000); // Simulamos un tiempo de espera de 2 segundos
 //   });
 
-  // console.log(myPromise); // Output: Promise { <pending> }
+// console.log(myPromise); // Output: Promise { <pending> }
   
   // myPromise
-  //   .then(number => console.log(number)) // Output: 0.789456312
-  //   .catch(error => console.error(error)) // Output: 'El número es menor o igual a 0.5'
+  //   .then(res => console.log(res)) // Output: RESOLVE: 'Me resolvi con exito'
+  //   .catch(error => console.error(error)) // Output: 'REJECT: Operacion rechazada'
   //   .finally(() => console.log('Me termine de resolver con o sin errores'))
 
 
 
 // EJEMPLO ASYNC AWAIT
 
-//   const getPromise = async () => {
-//     try{
-//         console.log(await myPromise)
-//     }catch (e){
-//         console.error(e)
-//     }
-// }
-//   getPromise()
+  // const getPromise = async () => {
+  //   try{
+  //       console.log(await myPromise)
+  //   }catch (error){
+  //       console.error(error)
+  //   }finally {
+  //     console.log('Entro al finally')
+  //   }
+  // }
+
+  // getPromise()
 
 
+// Ejercicio 1:
 
+// Crear una promise donde tengamos un numero random (lo pueden poner ustedes fijo)
+// Y si ese numero es mayor a 50 entre al resolve con un msj de "El numero es mayor a 50"
+// Y si ese numero es menor o igual a 50 entre al reject con un msj de 
+// "El numero es menor o igual a 50"
+
+// const myPromise = new Promise((resolve, reject) => {
+// });
+
+
+// Respuesta:
+
+// const miPromise = new Promise((resolve, reject) => {
+//   const num = 44;
+//   num > 50 ? resolve("El número es mayor a 50") : reject("El número es menor o igual a 50");
+// });
+
+// miPromise
+//   .then((resultado) => {
+//     console.log(resultado);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   })
+//   .finally(() => console.log('Terminó'));
 
 // MAP
 
 
 // const numbers = [1, 2, 3, 4, 5];
 
-// const doubledNumbers = numbers.map((number) => {
+// const doubledNumbers = numbers.map((number, index) => {
+//   console.log(index)
 //   return number * 2;
 // });
 
@@ -48,7 +73,44 @@
 // console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
 
 
+// Ejercicio 2: 
 
+// Crear una funcion donde a partir de un array de nombres me devuelva en la consola:
+// "Hola, (nombre correspondiente)"
+// Array: [Guido, Guille, Ale, Chiara, Cami]
+
+const nombres= ["Guido", "Guille", "Ale", "Chiara", "Cami"]
+
+nombres.map((nombre) => console.log(`Hola, ${nombre}`));
+
+
+
+// // Rta:
+// const nombres = ["Guido", "Guille", "Ale", "Chiara", "Cami"]
+
+// const saludar = (arrayDeNombres) => {
+//   return arrayDeNombres.map(n => console.log(`Hola, ${n}`))
+// }
+
+// saludar(nombres)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Ejercicio bonus //
 
 // Realizar una funcion que me devuelva el listado de Usuarios despues de 3 segundos (resolve)
 // con then, catch y finally 
@@ -92,13 +154,15 @@
 // .catch(e => console.error(e))
 // .finally(() => console.log('Termine de resolver o rechazar la solicitud'))
 
-// Con async / await || try catch
+// // Con async / await || try catch
 // const llameUsuarios = async () => {
 //   try{
 //     const res = await getUsers()
 //     console.log(res)
 //   }catch(e) {
 //     console.log('Error: ' + e)
+//   } finally {
+//     console.log('Termine de resolver o rechazar la solicitud')
 //   }
 // }
 
@@ -183,22 +247,22 @@ const arrayOfNumber = [9, 4, 10, 20, 555, 2, 56, 99]
 // }
 
 
-function getMinorAndMajor(numbers) {
-  if (numbers.length === 0) {
-    return { minor: undefined, major: undefined };
-  }
-  let min = numbers[0];
-  let max = numbers[0];
-  for (const number of numbers) {
-    if (number < min) {
-      min = number;
-    }
-    if (number > max) {
-      max = number;
-    }
-  }
-  return { minor: min, major: max };
-}
+// function getMinorAndMajor(numbers) {
+//   if (numbers.length === 0) {
+//     return { minor: undefined, major: undefined };
+//   }
+//   let min = numbers[0];
+//   let max = numbers[0];
+//   for (const number of numbers) {
+//     if (number < min) {
+//       min = number;
+//     }
+//     if (number > max) {
+//       max = number;
+//     }
+//   }
+//   return { minor: min, major: max };
+// }
 
 
 
@@ -209,7 +273,7 @@ function getMinorAndMajor(numbers) {
 //     console.log(max)
 //   }
 
- console.log(getMinorAndMajor(arrayOfNumber))
+//  console.log(getMinorAndMajor(arrayOfNumber))
 
 // function getMinorAndMajor(numbers){
 
