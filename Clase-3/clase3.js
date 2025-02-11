@@ -1,22 +1,74 @@
-// // Propiedades dinamicas:
-// const contador = 1;
+// const condition = true
+
+// if (1 == 2) {
+//     return true
+// } else {
+//     return false
+// }
+
+// 1 == 2 ? true : false
+
+
+// if ( 1 == 1 ) return true
+// 1 == 1 && true
+
+
+// Desestructuracion:
+
+// const coder = {
+//     curso: "ReactJs",
+//     profesor: "Luciano",
+//     alumnos: 50,
+// }
+
+// const { curso, profesor, alumnos } = coder
+
+// console.log(curso)
+// console.log(profesor)
+
+// Propiedades dinamicas:
+// const año = 2025;
+
 // const objeto = {
 //     nombre: "luciano",
-//     [ "propDinamica" + contador ]: "coders" 
+//     [ "propDinamica" + año ]: "coders"
 // };
+
 // console.log(objeto);
 
-// // Salida: 
-// // { 
+// // Salida:
+// // {
 // //     nombre: 'luciano',
 // //     propDinamica2023: 'coders'
 // // }
 
 
-// Spread operator:
-const alumnosArray = ['Juan', 'Marce', 'Luis', 'Mica', 'Luz']
 
-const alumnosNuevosArray = ['Manu', 'Azul', 'Chiara']
+
+// Comparacion de objetos:
+// const primerObjeto = {
+//     nombre: 'Luciano'
+// }
+
+// const segundoObjeto = {
+//     nombre: 'Luciano'
+// }
+
+
+// console.log(primerObjeto == segundoObjeto) // False
+// console.log(JSON.stringify(primerObjeto) === JSON.stringify(segundoObjeto)); // True
+
+
+
+
+
+
+// Spread operator:
+// const alumnosArray = ['Juan', 'Marce', 'Luis', 'Mica', 'Luz']
+
+// const alumnosNuevosArray = ['Manu', 'Azul', 'Chiara']
+
+// console.log( [...alumnosArray, ...alumnosNuevosArray ] )
 
 // const alumnosTotal = [...alumnosArray, ...alumnosNuevosArray]
 // console.log(alumnosTotal)
@@ -39,6 +91,10 @@ const alumnosNuevosArray = ['Manu', 'Azul', 'Chiara']
 // const nuevo = [...arrayEjemplo]
 
 
+
+
+
+
 // EJERCICIO:
 
 // Crear una funcion que pasandole un numero y un array como parametro lo que haga es:
@@ -46,67 +102,73 @@ const alumnosNuevosArray = ['Manu', 'Azul', 'Chiara']
 // Si el valor no esta dentro del array lo agregue
 // RETORNE ARRAY console.log(arrayDeResultado)
 
-let valores = [2, 6, 9, 0, '8']
+
+// Solución:
+
+const filtrarNumeros = (numero, array) => {
+    const estaDentroDelArray = array.find(n => n == numero)
+
+    if(estaDentroDelArray){
+        return array.filter(n => n != numero)
+    } else {
+        return [numero, ...array]
+    }
+}
+
+// Cuando se cumple cualquiera de las dos condiciones el array debe devolverse ordenado de menor a mayor
+
+console.log(filtrarNumeros(1, [2, 3]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let valores = [2, 6, 9, 0, '8']
 
 // 0 == '0' : true
 // 0 === '0' : false
 
 // 0 !== '0' : true
 // 0 != '0' : false
-const miFuncion = (valor, array) => {
-    const isIn = array.find(n => n === valor)
-    let arrayNuevo = []
-    if(isIn){
-        arrayNuevo = array.filter(n => n !== valor)
-    }else{
-        arrayNuevo = [...array, valor]
-    }
-    return arrayNuevo
-}
-
-// console.log(miFuncion(8, valores))
 
 // true ? console.log('es true') : console.log('es false')
-const miValorNuevo = 10
-miValorNuevo == 10 && console.log('es true')
-    
+// const miValorNuevo = 10
+// miValorNuevo == 10 && console.log('es true')
+
 // Ayudas: podemos utilizar un .find() para ver si el valor se encuentra dentro del array
-    
-    
-    
 
-// const miFuncionResuelta = (valor, array) => {
-//     const encontrado = array.find(numero => numero === valor)
 
-//     if(encontrado){
-//         const newArray = array.filter(numero => numero !== valor)
-//         return console.log(newArray)
-//     }else{
-//         const newArray = [...array, valor]
-//         return console.log(newArray)
-//     } 
+// const filterNumber = (number, array) => {
+//     const isIn = array.find((n) => n == number)
+
+//     if(isIn){
+//         return array.filter((n) => n != number)
+//     } else {
+//         return [...array, number]
+//     }
 // }
 
-// miFuncionResuelta(9, valores)
-
-
-
-// Y si el array seria
-// let valores = [2, 6, '9', 0, '8']
-// miFuncionResuelta(9, valores)
-
-
-
+// console.log(filterNumber('1', [10, 20, 1, 3]))
+// console.log(filterNumber(1, [10, 20, 3]))
 
 
 
 // Desestructuracion de array u objetos
-const objetoDesestructuracion = {
-    comision: '9999',
-    alumnos: 103,
-    clases: 15,
-    tema: 'ReactJs'
-}
+// const objetoDesestructuracion = {
+//     comision: '9999',
+//     alumnos: 103,
+//     clases: 15,
+//     tema: 'ReactJs'
+// }
 
 // // Queremos acceder al numero de comision y de alumnos:
 // const nroDeComision = objetoDesestructuracion.comision
@@ -116,8 +178,8 @@ const objetoDesestructuracion = {
 
 // // Podriamos hacer lo siguiente con desestructuracion:
 // const {comision, alumnos, clases, tema} = objetoDesestructuracion
-// console.log(comision) 
-// console.log(alumnos) 
+// console.log(comision)
+// console.log(alumnos)
 
 
 
@@ -151,7 +213,7 @@ const objetoDesestructuracion = {
 // console.log(miValor > 50 ? `mi valor es mayor a 50 y es de: ${miValor}` : `mi valor es menor o igual a 50 y es de: ${miValor}`)
 
 // "mi valor es mayor a 50 y es de: " + miValor
-// `mi valor es mayor a 50 y es de: ${miValor}` 
+// `mi valor es mayor a 50 y es de: ${miValor}`
 
 // const estaBuenaClase = false
 // const esTrue = true
@@ -211,8 +273,8 @@ const miCarrito = []
 
 
 
-// // Ejemplos comunes de Sugar Syntax:
-// // Sin sugar syntax:
+// Ejemplos comunes de Sugar Syntax:
+// Sin sugar syntax:
 // let i = 0
 // i = i + 1
 // i = i - 1
@@ -221,8 +283,8 @@ const miCarrito = []
 // // Con sugar syntax
 // i += 1; // Equivalente a i = i + 1; (Suma)
 // i -= 1; // Equivalente a i = i - 1; (Resta)
-// i *= 1; // Equivalente a i = i * 1; (Multiplicación)
-// i /= 1; // Equivalente a i = i / 1; (División)
+// i *= 4; // Equivalente a i = i * 4; (Multiplicación)
+// i /= 2; // Equivalente a i = i / 2; (División)
 
 // // Otros ejemplos:
 // i++ // Esto suma 1
@@ -267,4 +329,16 @@ const miCarrito = []
 
 // Para profundizar WEBPACK: https://www.youtube.com/watch?v=FMNuTj89RzU&ab_channel=midudev
 
+// Imaginemos que estás armando un castillo de LEGO.
 
+// 1. Módulos 🏗️
+//    En lugar de tener una sola bolsa con todas las piezas mezcladas, tienes bolsas separadas: una para las torres, otra para las murallas, otra para las puertas. Cada bolsa es un módulo que puedes usar cuando lo necesites.
+
+// 2. Importar y Exportar 📦
+//    Si necesitas una torre para tu castillo, no tienes que construirla desde cero. Simplemente abres la bolsa de torres (importas el módulo) y la usas en tu castillo. Si tú inventaste una pieza nueva y genial, puedes ponerla en una bolsa aparte (exportarla) para que otros puedan usarla también.
+
+// 3. Webpack vs. Vite ⚔️
+//    - Webpack es como si, antes de jugar, abrieras todas las bolsas, juntarás todas las piezas y las metieran en una sola caja. Luego, cuando quieres construir, tienes todo listo, pero tardaste un buen rato en prepararlo.
+//    - Vite, en cambio, te deja abrir solo las bolsas que necesitas en el momento, sin esperar tanto. Es más rápido y te permite construir sobre la marcha.
+
+// Así que los módulos son como esas bolsas de piezas organizadas que hacen que todo sea más fácil y ordenado.
